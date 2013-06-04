@@ -1,0 +1,31 @@
+$columns: 12 !default;
+$column-width: 4em !default;
+$gutter-width: 2.5em !default;
+
+%grid {
+  text-align: justify !important;
+  text-justify: distribute-all-lines;
+  font-size: 0 !important;
+
+  & > * {
+    text-align: left;
+    font-size: medium;
+  }
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+%grid-cell {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+}
+
+@function grid-span($cols, $total: $columns) {
+  @return ($column-width * $cols  + $gutter-width * ($cols  - 1)) /
+          ($column-width * $total + $gutter-width * ($total - 1)) * 100%;
+}
