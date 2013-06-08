@@ -11,3 +11,5 @@
 3. Set the width of the cells using the function `grid-span`, using the column
    span as parameter. You probably want this inside Media Queries if you use a
    mobile first approach.
+4. Optional mixins `grid-push`, `grid-pull`, `grid-prepend` and `grid-append`.
+   Push and pull need `position: relative` on the element to work.
