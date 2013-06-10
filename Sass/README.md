@@ -36,6 +36,20 @@ To create a simple 3-column layout:
 }
 ```
 
+Or, mobile first using a Media Query:
+
+```scss
+.grid {
+  @extend %grid;
+}
+.col {
+  @extend %grid-cell;
+  @media screen and (min-width: 48em) {
+    width: grid-span(4);
+  }
+}
+```
+
 To swap column 1 and column 2:
 
 ```scss
