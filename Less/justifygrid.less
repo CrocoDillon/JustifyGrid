@@ -1,0 +1,52 @@
+@columns: 12;
+@column-width: 4em;
+@gutter-width: 2.5em;
+@support-old-ie: false;
+
+#grid() {
+  text-align: justify !important;
+  text-justify: distribute-all-lines;
+  font-size: 0 !important;
+
+  & > * {
+    text-align: left;
+    font-size: medium;
+  }
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+  .cell {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .span(@cols, @total: @columns) {
+    width: percentage((@column-width * @cols  + @gutter-width * (@cols  - 1)) /
+                      (@column-width * @total + @gutter-width * (@total - 1)));
+  }
+
+  .push(@cols, @total: @columns) {
+    left: percentage((@column-width + @gutter-width) * @cols /
+                     (@column-width * @total + @gutter-width * (@total - 1)));
+  }
+
+  .pull(@cols, @total: @columns) {
+    left: percentage((@column-width + @gutter-width) * -@cols /
+                     (@column-width * @total + @gutter-width * (@total - 1)));
+  }
+
+  .prepend(@cols, @total: @columns) {
+    margin-left: percentage((@column-width + @gutter-width) * @cols /
+                            (@column-width * @total + @gutter-width * (@total - 1)));
+  }
+
+  .append(@cols, @total: @columns) {
+    margin-right: percentage((@column-width + @gutter-width) * @cols /
+                             (@column-width * @total + @gutter-width * (@total - 1)));
+  }
+}
