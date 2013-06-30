@@ -21,7 +21,7 @@ $support-old-ie: false !default;
 
   @if $support-old-ie {
     .lt-ie8 & {
-      zoom: expression(this.runtimeStyle.zoom="1", this.appendChild( document.createElement("span") ).style.fontSize="0");
+      zoom: 1;
     }
   }
 }
@@ -34,7 +34,6 @@ $support-old-ie: false !default;
   @if $support-old-ie {
     .lt-ie8 & {
       display: inline;
-      zoom: 1;
     }
   }
 }

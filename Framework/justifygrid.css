@@ -16,11 +16,10 @@
   font-size: medium;
 }
 .lt-ie8 .grid {
-  zoom: expression(this.runtimeStyle.zoom="1", this.appendChild( document.createElement("span") ).style.fontSize="0");
+  zoom: 1;
 }
 .lt-ie8 .grid > * {
   display: inline;
-  zoom: 1;
 }
 .span-1  { width: 5.298013%;  }
 .span-2  { width: 13.907285%; }
