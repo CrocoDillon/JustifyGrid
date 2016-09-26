@@ -1,0 +1,49 @@
+columns = 12;
+column-width = 4em
+gutter-width = 2.5em
+support-old-ie = false
+
+grid =
+  text-align: justify !important
+  text-justify: distribute-all-lines
+  font-size: 0 !important
+
+  & > *
+    text-align: left
+    font-size: medium
+
+  &:after
+    content: ''
+    display: inline-block
+    width: 100%
+
+  if support-old-ie
+    .lt-ie8 &
+      zoom: 1
+
+grid-cell =
+  vertical-align: top
+  display: inline-block
+  width: 100%
+
+  if $support-old-ie
+    .lt-ie8 &
+      display: inline
+
+grid-span(cols, total = columns)
+  (column-width * cols + gutter-width * (cols - 1)) / (column-width * total + gutter-width * (total - 1)) * 100%
+
+grid-xt(cols, total = columns)
+  (column-width + gutter-width) * cols / (column-width * total + gutter-width * (total - 1)) * 100%
+
+grid-push(cols, total = $columns)
+  left: grid-xt(cols, total)
+
+grid-pull(cols, total = columns)
+  left: grid-xt(-cols, total)
+
+grid-prepend(cols, total = columns)
+  margin-left: grid-xt(cols, total)
+
+grid-append(cols, total = columns)
+  margin-right: grid-xt(cols, total)
