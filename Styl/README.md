@@ -45,7 +45,6 @@ Or, mobile first using a Media Query:
   @media screen and (min-width: 48em) {
     width grid-span(4)
   }
-}
 ```
 
 To swap column 1 and column 2:
@@ -54,9 +53,7 @@ To swap column 1 and column 2:
 .col-1
   position relative
   grid-push(4)
-}
 .col-2
   position relative
   grid-pull(4)
-}
 ```
