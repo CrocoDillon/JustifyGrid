@@ -9,7 +9,9 @@ $support-old-ie: false !default
   font-size: 0 !important
 
   & > *
-    text-align: left
+    @if $support-old-ie
+      text-align: inherit
+    text-align: initial
     font-size: medium
 
   &:after
