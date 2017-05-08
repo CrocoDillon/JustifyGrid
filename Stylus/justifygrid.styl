@@ -1,0 +1,52 @@
+columns = 12
+column-width = 4
+gutter-width = 2.5
+containerWidth = 75rem
+support-old-ie = false
+
+grid()
+  text-align justify !important
+  text-justify distribute-all-lines
+  font-size 0 !important
+  if support-old-ie
+    zoom 1
+
+  & > *
+    text-align left
+    font-size medium
+
+  &:after
+    content ''
+    display inline-block
+    width 100%
+
+.container
+  max-width containerWidth
+  margin 0 10px
+  > .content
+    width: 100%
+    margin: 20px auto;
+  grid()
+  @media (min-width: containerWidth)
+    margin-left: auto;
+    margin-right: auto;
+  
+span(cols, total = columns)
+  vertical-align top
+  display inline-block
+  width ((column-width * cols  + gutter-width * (cols  - 1)) / (column-width * total + gutter-width * (total - 1)) * 100%)
+
+grid-xt(cols, total = columns)
+  ((column-width + gutter-width) * cols / (column-width * total + gutter-width * (total - 1)) * 100%)
+
+push(cols, total = columns)
+  left grid-xt(cols, total)
+
+pull(cols, total = columns)
+  left grid-xt(-cols, total)
+
+prepend(cols, total = columns)
+  margin-left grid-xt(cols, total)
+
+append(cols, total = columns)
+  margin-right grid-xt(cols, total)
