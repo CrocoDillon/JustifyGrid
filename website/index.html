@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8"/>
+    <title>Justify Grid</title>
+    <meta name="description" content="Justify Grid. A new way to create layouts. A set of Sass helpers. A tiny CSS framework. Featuring text-align: justify on inline-blocks for a responsive layout."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- SEO -->
+    <link rel="canonical" href="https://justifygrid.com/"/>
+
+    <!-- Open Graph -->
+    <meta property="og:url" content="https://justifygrid.com/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Justify Grid"/>
+    <meta property="og:image" content="https://justifygrid.com/images/icon-640.png"/>
+    <meta property="og:description" content="A new way to create layouts. A set of Sass helpers. A tiny CSS framework. Featuring text-align: justify on inline-blocks for a responsive layout."/>
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="@CrocoDillon"/>
+    <meta name="twitter:title" content="Justify Grid"/>
+    <meta name="twitter:image" content="https://justifygrid.com/images/icon-640x320.png"/>
+    <meta name="twitter:description" content="A new way to create layouts. A set of Sass helpers. A tiny CSS framework. Featuring text-align: justify on inline-blocks for a responsive layout."/>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Slab:700|Open+Sans:300,400"/>
+    <link rel="stylesheet" href="css/global.v3.min.css"/>
+    <!--[if lte IE 8]>
+      <script src="/js/vendor/html5shiv.js"></script>
+      <script src="/js/vendor/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+
+  <header class="header">
+    <div class="inner">
+      <h1>Justify Grid</h1>
+      <p>A new way to create layouts</p>
+    </div>
+  </header>
+
+
+  <div class="main">
+    <section id="ermahgerd">
+      <h2>What? Another framework?</h2>
+      <p>Let's start with what Justify Grid is not. It's not yet another bloated grid framework, who would want that?
+         Justify Grid is much more than that... or better yet, much less. Want to know what Justify Grid is exactly?</p>
+    </section>
+
+    <section id="about">
+      <h2>You got my attention, what is Justify Grid?</h2>
+      <p>A new way to create layouts! How you use it depends on you... and your expertise.
+         Justify Grid is whatever you want it to be. Here are some options to get you started.</p>
+      <div class="option">
+        <p class="title">Methodology</p>
+        <p class="excerpt">You want to know more about the methodology of Justify Grid without being forced how to implement it?</p>
+        <p class="btn-wrapper"><a href="#methodology" class="btn">Read more &raquo;</a></p>
+        <p class="tip">Tip: This is a good place to start even if you're ending up using Sass or the framework!</p>
+      </div>
+      <div class="option">
+        <p class="title">Sass helpers</p>
+        <p class="excerpt">If you use Sass, you'll love the easy to use helpers. These will keep your CSS light and your markup clean.</p>
+        <p class="btn-wrapper"><a href="#helpers" class="btn">Read more &raquo;</a></p>
+        <p class="tip">Recommended</p>
+      </div>
+      <div class="option">
+        <p class="title">A framework</p>
+        <p class="excerpt">Just the grid, nothing more. Promise! Customizable and easy to use for prototyping or for novice CSS authors.</p>
+        <p class="btn-wrapper"><a href="#framework" class="btn">Read more &raquo;</a></p>
+      </div>
+    </section>
+
+    <section id="methodology">
+      <h2>The Methodology</h2>
+
+      <h3>Solving a problem</h3>
+      <p>The problem with CSS is that for a long time it had no intuitive way of creating layouts.
+         That is all about to change, but for now we are stuck with using conventional methods like using floats or inline-blocks if we care about browser support.</p>
+      <p>People have been very creative solving the problem using floats and they are often used for creating layouts,
+         but they need clearfixes and unsemantic row wrappers to work.</p>
+      <p>Inline-blocks, however, don't require clearfixes and because they behave like text they don't require row wrappers either.
+         The problem with inline-blocks is, because they behave like text, whitespace between them in markup shows up as whitespace between them in layout.
+         Current solutions battle this whitespace either by removing the whitespace from markup or by using negative word and letter spacing.</p>
+      <p>A problem with both floats and current inline-block solutions is sub-pixel rounding.
+         Browser vendors each have their own implementation with an unpredictable rounding error as result.
+         This is a problem with fluid layouts, where grids break easily if the column widths add up to over 100% after rounding errors.
+         Another problem is how do you create the gutter?
+         There are too many solutions to go into details on this but all share the same flaw.
+         They either require additional markup to keep gutter in-between or they don't allow grid nesting.</p>
+      <p>The future of layouts might be <a href="http://caniuse.com/#feat=css-grid">CSS Grid Layout</a> or <a href="http://caniuse.com/#feat=flexbox">Flexible Box Layout</a>,
+         but for now they are not usable in most production environments because of browser support and unfinished specification.</p>
+
+      <h3>Justify Grid to the rescue!</h3>
+      <p>Justify Grid solves all problems with just one simple property: <code class="language-css">text-align: justify;</code></p>
+      <ul>
+        <li>Whitespace between columns</li>
+        <li>Sub-pixel rounding errors</li>
+        <li>Robust in-between gutter</li>
+      </ul>
+      <p>While conventional methods using inline-blocks try to battle whitespace, Justify Grid is unique by using this whitespace as a feature.
+         You won't ever need to worry about whitespace, rounding errors and calculating margins again.
+         They are all solved by justify aligning the columns, the core principle of Justify Grid.</p>
+      <p>Enough introduction. Let's take a look at some examples!</p>
+
+      <section class="example">
+        <h4>Example: Simple 2-column layout</h4>
+        <p>The simplest use case would be a cookie-cutter 2-column layout.
+           The left column being the navigation and the right column being the main content.
+           This can be solved as follows:</p>
+        <pre class="language-markup"><code>&lt;div class="page"&gt;
+  &lt;header&gt;&lt;/header&gt;
+  &lt;nav&gt;&lt;/nav&gt;
+  &lt;div class="main"&gt;&lt;/div&gt;
+  &lt;footer&gt;&lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+        <pre class="language-css"><code>.page {
+  text-align: justify;
+}
+header, nav, .main, footer {
+  text-align: left;
+}
+nav, .main, footer {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+}
+nav {
+  width: 22.5166%;
+}
+.main {
+  width: 74.1722%;
+}</code></pre>
+        <p>Note that even though the footer is full-width, it's still declared as inline-block.
+           The reason for this is to make sure justify alignment works, every line with inline-blocks has to be succeeded either by another line of inline-blocks or a full-width inline-block.</p>
+      </section>
+
+      <section class="example">
+        <h4>Example: Justify aligning last row</h4>
+        <p>If there is no succeeding full-width element you have to add it with a pseudo-element:</p>
+        <pre class="language-markup"><code>&lt;div class="main"&gt;
+  &lt;h1&gt;Image Gallery&lt;/h1&gt;
+  &lt;div class="image"&gt;&lt;/div&gt;
+  &lt;div class="image"&gt;&lt;/div&gt;
+  &lt;div class="image"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <pre class="language-css"><code>.main {
+  text-align: justify;
+  font-size: 0;
+}
+.main:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+h1, .image {
+  text-align: left;
+  font-size: medium;
+}
+.image {
+  vertical-align: top;
+  display: inline-block;
+  width: 30.3571%;
+}</code></pre>
+        <p>Note <code class="language-css">font-size: 0;</code>, this is needed to hide the pseudo-element.
+           This results in an issue with Internet Explorer which will be addressed later.</p>
+      </section>
+
+      <section>
+        <h4>Putting it all together</h4>
+        <p>For now the only thing left to do is explain how to get the width values.
+           The examples use fluid widths so percentages are being used, but they are based on fixed widths by dividing total column width plus total gutter width by parent width.</p>
+        <p><img src="images/example_width_calculations.png" alt="" style="max-width:100%;width:auto"/></p>
+        <p>Calculating percentages based on fixed widths might seem odd at first, but it results in nice and consistent column and gutter width.
+           By setting a max-width the percentage widths will match the fixed widths on a large enough screen.
+           Setting max-width in rems makes sense if the font-size on that element is zero.</p>
+        <p>Putting it all together on CodePen:</p>
+        <pre class="codepen" data-height="300" data-type="result" data-href="gdEbl" data-user="CrocoDillon" data-safe="true">
+          <code></code>
+          <a href="http://codepen.io/CrocoDillon/pen/gdEbl">Check out this Pen!</a>
+        </pre>
+      </section>
+
+      <h3>Overcoming cross-browser difficulties</h3>
+      <p>Internet Explorer has an issue with <code class="language-css">font-size: 0;</code> causing whitespace to collapse instead of expanded by justify aligning.
+         There are other ways to hide the pseudo-element like <code class="language-css">line-height: 0;</code> but Justify Grid is using font-size because it's fixing a Chrome issue as well.
+         Internet Explorer has an easy solution anyway, <code class="language-css">text-justify: distribute-all-lines;</code></p>
+      <p>A more known issue with Internet Explorer 7 and older is it's lack of inline-block support.
+         If such browser support is needed this can be fixed with <code class="language-css">display: inline; zoom: 1;</code></p>
+      <p>Chrome has several issues as well.
+         Using linebreaks only between inline-blocks gives a gap when the last row needs to be justified.
+         This is fixed by <code class="language-css">font-size: 0;</code></p>
+
+      <h3>Known issues and limitations</h3>
+      <p>Because of <code class="language-css">font-size: 0;</code> setting font-size using ems on child elements won't work.
+         This is especially a problem for headings, use rems with px fallback.</p>
+      <p>If the first inline-block in a line is smaller than the total width of the gutter on the previous line,
+         that element won't wrap as intended.</p>
+      <p>In Chrome, sub-pixel rounding errors are occasionally visible.
+         The effect is minor and will never break the grid though.
+         Percentages with high enough precision almost mitigate this issue completely.</p>
+      <p>In Opera, there is a bug with setting font-size to 0 causing too wide gaps between inline-blocks.
+         A possible fix could be <code class="language-css">font-size: 0.5px;</code>.</p>
+    </section>
+
+    <section id="helpers">
+      <h2>The Sass helpers</h2>
+      <p>These are the basic Sass helpers.
+         For brevity on this page, I've left out the old Internet Explorer fixes and some mixins for column swapping and filling.
+         You can find more on the <a href="https://github.com/CrocoDillon/JustifyGrid">Github project</a> page.</p>
+      <pre class="language-scss"><code>$columns: 12 !default;
+$column-width: 4em !default;
+$gutter-width: 2.5em !default;
+
+%grid {
+  text-align: justify !important;
+  text-justify: distribute-all-lines;
+  font-size: 0 !important;
+
+  &amp; &gt; * {
+    text-align: left;
+    font-size: medium;
+  }
+
+  &amp;:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+%grid-cell {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+}
+
+@function grid-span($cols, $total: $columns) {
+  @return ($column-width * $cols  + $gutter-width * ($cols  - 1)) /
+          ($column-width * $total + $gutter-width * ($total - 1)) * 100%;
+}</code></pre>
+      <p>Quick usage: extend the placeholders <code class="token selector">%grid</code> and <code class="token selector">%grid-cell</code> where needed outside of Media Queries.
+         Then use the function <code>grid-span</code>, probably inside Media Queries, to set the width on elements extending %grid-cell using the column span as parameter.
+         For example to span 3 columns, use <code class="language-scss">width: grid-span(3);</code>.
+         The second parameter is only needed for nested grids.</p>
+      <p>Note: for Opera support, you might want to try <code class="language-css">font-size: 0.5px;</code> instead of 0.
+         This is something that will need more testing.</p>
+    </section>
+
+    <section id="framework">
+      <h2>The Framework</h2>
+      <p>The grid framework is a customizable and easy to use way to get familiar with Justify Grid, or with CSS layouts in general.
+         It's using classes commonly found in other grid frameworks such as span, push, pull, prepend and append.</p>
+      <p>The main class is <code class="token selector">.grid</code>, the wrapper class, that will make all it's children elements 100% width inline-blocks.
+         To create columns, add <code class="token selector">.span</code> classes to one or more of those children to make them span less than full width.
+         Column order can be rearranged by using the optional <code class="token selector">.push</code> and <code class="token selector">.pull</code> classes, which are using relative positioning.
+         The optional <code class="token selector">.prepend</code> and <code class="token selector">.append</code> classes should be used to add margin if the total span of a line is less than the number of columns.</p>
+      <p><img src="images/framework.png" alt=""/></p>
+      <p><a href="http://cdpn.io/jEivm">Preview customized column spans on CodePen &raquo;</a></p>
+
+      <section id="customize">
+        <h3>Customize your build</h3>
+        <img src="images/customize.png" alt=""/>
+        <form id="builder">
+          <label><span>Number of columns</span> <input type="text" name="columns" value="12" /></label>
+          <label><span>Column width</span>      <input type="text" name="column"  value="4"  /></label>
+          <label><span>Gutter width</span>      <input type="text" name="gutter"  value="2.5"/></label>
+          <label><input type="checkbox" name="xt"/> <span>Optional classes</span></label>
+          <label><input type="checkbox" name="mq"/> <span>Include media query</span></label>
+          <label><input type="checkbox" name="ie"/> <span>Support old IE (6&amp;7)</span></label>
+          <button class="btn" type="submit">Customize!</button>
+          <label class="lt-ie9-hidden"><input type="checkbox" name="minify" checked/> <span>Minify</span></label>
+        </form>
+        <pre class="language-css"><code id="builder-output"></code></pre>
+      </section>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="inner">
+      <p>Justify Grid is produced by <a href="https://crocodillon.com">CrocoDillon</a></p>
+      <p class="license"><a href="http://unlicense.org/">Unlicensed</a></p>
+    </div>
+  </footer>
+
+  <script src="js/global.v2.min.js"></script>
+  <script src="https://cpwebassets.codepen.io/assets/embed/ei.js" async></script>
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  </body>
+</html>
